@@ -1,0 +1,24 @@
+.jumbotron 
+{
+    font-family:'Courier New', Courier, monospace;
+    background-color: indianred;
+    color: white;
+}
+body 
+{
+    background-color: white;
+}
+.card-title 
+{
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    background-color: indianred;
+    color: white;
+}
+.card 
+{
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    background-color: indianred;
+    display: flex;
+}

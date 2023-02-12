@@ -1,18 +1,18 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const Manager = require("./lib/Manager.js");
-const Engineer = require("./lib/Engineer.js");
-const Intern = require("./lib/Intern.js");
+const Manager = require("./lib/manager.js");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern.js");
 
 const path = require("path");
 const generateTeam = require("./src/template.js");
 
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
+
+
 teamArray = []; 
-
-
 
 function makeTeam() {
   function createTeam() {
@@ -21,7 +21,7 @@ function makeTeam() {
         {
           type: "list",
           message: "add all of the employees of your team!",
-          name: "buildTeamPrompt",
+          name: "addEmployeePrompt",
           choices: [
             "Engineer",
             "Manager",
@@ -32,17 +32,13 @@ function makeTeam() {
       ])
       .then(function (userInput) {
         switch (userInput.addEmployeePrompt) {
-        case "Engineer":
-            addEngineer();
+        case "Engineer": addEngineer();
                 break;
-        case "Manager":
-            addManager();
+        case "Manager": addManager();
                 break;
-        case "Intern":
-            addIntern();
+        case "Intern": addIntern();
                 break;
-        default:
-                htmlBuilder();
+        default: htmlBuilder();
         }
       });
   }
