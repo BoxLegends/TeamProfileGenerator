@@ -7,7 +7,7 @@ test("Creates a new employee.", () => {
 
 test("Test for the email.", () => {
     const email = "johnDoe@gmail.com";
-    const employeeInstance = new Employee("johnDoe", 2, email);
+    const employeeInstance = new Employee(email, "johnDoe", 2);
     expect(employeeInstance.email).toBe(email);
   });
 
@@ -25,7 +25,7 @@ test("Testing the ID.", () => {
 
 test("test's email through getEmail.", () => {
     const testEmail = "johnDoe@test.com";
-    const employeeInstance = new Employee("johnDoe", 2, testEmail);
+    const employeeInstance = new Employee(testEmail, "johnDoe", 2);
     expect(employeeInstance.getEmail()).toBe(testEmail);
   });  
 
@@ -44,6 +44,6 @@ test("test's ID through getID.", () => {
 
 test("Tests role.", () => {
   const returnValue = "Employee";
-  const employeeInstance = new Employee("johnDoe", 2, "johnDoe@test.com");
+  const employeeInstance = new Employee("johnDoe@test.com", "johnDoe", 2);
   expect(employeeInstance.getRole()).toBe(returnValue);
 });
